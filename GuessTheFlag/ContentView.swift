@@ -10,9 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack() {
+            Color.red
+                .frame(minWidth:200, maxWidth:.infinity,  maxHeight: 200)
             Text("Your Content")
         }
-        .background(.red)
     }
 }
 
