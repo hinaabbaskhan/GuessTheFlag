@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 //      LinearGradient
-        LinearGradient(colors: [.white,.blue], startPoint: .top, endPoint: UnitPoint.bottom)
+        LinearGradient(
+            stops: [Gradient.Stop(color: .white, location: 0.44),Gradient.Stop(color: .blue, location: 0.55)],
+            startPoint: .top, endPoint: UnitPoint.bottom)
 //      Practice Colors and frames
         ZStack() {
             VStack(spacing:0){
