@@ -19,6 +19,15 @@ struct ButtonAndImages: View {
 //          Important: Apple explicitly recommends against using too many prominent buttons,
 //          because when everything is prominent nothing is.
             Button("Button 4"){}.buttonStyle(.borderedProminent).tint(.mint)
+//          Custom Button
+            Button{
+                print("Taping..")
+            }label: {
+                Text("Tap me!")
+                    .padding()
+                    .foregroundStyle(.white)
+                    .background(.red)
+            }
         }
     }
     
