@@ -8,14 +8,34 @@
 import SwiftUI
 
 struct ImagesView: View {
+    @State private var showingAlert=false;
+
     var body: some View {
         ZStack{
-        Image("maldives")
-        Image(decorative: "maldives")//will load the same image, but won’t read it out for users who have enabled the screen reader
-        Image(systemName: "pencil.circle")
-            .foregroundStyle(.white)
-            .font(.largeTitle)
+            Image("maldives")
+            Image(decorative: "maldives")//will load the same image, but won’t read it out for users who have enabled the screen reader
+            HStack{
+                Image(systemName: "pencil.circle")
+                    .foregroundStyle(.white)
+                    .font(.largeTitle)
+                Button{
+                    showingAlert=true
+                }label: {
+                    Label("Show Alert", systemImage: "alert")
+                        .padding()
+                        .background(.red)
+                        .foregroundStyle(.white)
+                }
+                .alert("Important Message", isPresented: $showingAlert){
+                    Button("Delete",role: .destructive){}
+                    Button("Cancel",role: .cancel){}
+                }
+                message:{Text("Please read this")}
+                
+            }
+            
         }
+        
     }
 }
 
@@ -58,7 +78,6 @@ struct ButtonsView: View {
                     .foregroundStyle(.white)
             }
             
-        
         }
     }
     
