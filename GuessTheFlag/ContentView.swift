@@ -9,6 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+//      Simple Linear Gradient
+        Text("Your content")
+            .frame(maxWidth: .infinity,maxHeight: .infinity)
+            .foregroundColor(.white)
+            .background(.red.gradient)
 //      AngularGradient
         AngularGradient(colors: [.red,.purple,.indigo,.blue,.green,.yellow,.orange,.red], center: .center)
 //      RadialGradient
