@@ -14,7 +14,8 @@ struct GuessTheFlagApp: App {
 //            FrameColorsAndGradients()
 //            ButtonsView()
 //            ImagesView()
-            AlertsView()
+//            AlertsView()
+            ContentView()
         }
     }
 }
