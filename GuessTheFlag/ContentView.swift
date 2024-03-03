@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+//      LinearGradient
+        LinearGradient(colors: [.white,.blue], startPoint: .top, endPoint: UnitPoint.bottom)
+//      Practice Colors and frames
         ZStack() {
             VStack(spacing:0){
                 Color.red
                 Color.blue
             }
-            
             Text("Your Content")
                 .foregroundColor(.secondary)
                 .padding(50)
