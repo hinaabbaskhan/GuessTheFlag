@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+//      RadialGradient
+        RadialGradient(colors: [.blue,.black], center: .center, startRadius: 20, endRadius: 200)
 //      LinearGradient
         LinearGradient(
             stops: [
@@ -16,7 +18,8 @@ struct ContentView: View {
                 .init(color: .blue, location: 0.55)
             ],
             startPoint: .top,
-            endPoint: UnitPoint.bottom)
+            endPoint: UnitPoint.bottom
+        )
 //      Practice Colors and frames
         ZStack() {
             VStack(spacing:0){
