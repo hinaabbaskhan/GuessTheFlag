@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct ImagesView: View {
+    var body: some View {
+        ZStack{
+        Image("maldives")
+        Image(decorative: "maldives")//will load the same image, but won’t read it out for users who have enabled the screen reader
+        Image(systemName: "pencil.circle")
+            .foregroundStyle(.white)
+            .font(.largeTitle)
+        }
+    }
+}
+
 
 struct ButtonsView: View {
     var body: some View {
@@ -29,6 +41,24 @@ struct ButtonsView: View {
                     .foregroundStyle(.white)
                     .background(.red)
             }
+            Button{
+                print("Button was tapped")
+            }label: {
+                HStack{
+                    Image(systemName: "pencil")
+                    Text("Edit")
+                }
+            }
+            Button{
+                print("Button was tapped")
+            }label: {
+                Label("Edit", systemImage: "pencil")
+                    .padding()
+                    .background(.red)
+                    .foregroundStyle(.white)
+            }
+            
+        
         }
     }
     
@@ -75,6 +105,7 @@ struct FrameColorsAndGradients: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 //        FrameColorsAndGradients()
-        ButtonsView()
+//        ButtonsView()
+        ImagesView()
     }
 }
