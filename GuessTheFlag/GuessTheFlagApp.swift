@@ -13,7 +13,8 @@ struct GuessTheFlagApp: App {
         WindowGroup {
 //            FrameColorsAndGradients()
 //            ButtonsView()
-            ImagesView()
+//            ImagesView()
+            AlertsView()
         }
     }
 }
