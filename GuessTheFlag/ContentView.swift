@@ -7,7 +7,16 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ButtonAndImages: View {
+    var body: some View {
+        Button("Delete Selection", role:.destructive, action: executeDelete)
+    }
+    
+    func executeDelete() {
+        print("Now deleting…")
+    }
+}
+struct FrameColorsAndGradients: View {
     var body: some View {
 //      Simple Linear Gradient
         Text("Your content")
@@ -42,8 +51,10 @@ struct ContentView: View {
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+//        FrameColorsAndGradients()
+        ButtonAndImages()
     }
 }
