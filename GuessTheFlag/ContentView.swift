@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ButtonAndImages: View {
+
+struct ButtonsView: View {
     var body: some View {
         VStack{
             Button("Delete Selection", role:.destructive, action: executeDelete)
@@ -74,6 +75,6 @@ struct FrameColorsAndGradients: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 //        FrameColorsAndGradients()
-        ButtonAndImages()
+        ButtonsView()
     }
 }

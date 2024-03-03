@@ -12,7 +12,7 @@ struct GuessTheFlagApp: App {
     var body: some Scene {
         WindowGroup {
 //            FrameColorsAndGradients()
-            ButtonAndImages()
+            ButtonsView()
         }
     }
 }
