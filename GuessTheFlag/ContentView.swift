@@ -9,7 +9,17 @@ import SwiftUI
 
 struct ButtonAndImages: View {
     var body: some View {
-        Button("Delete Selection", role:.destructive, action: executeDelete)
+        VStack{
+            Button("Delete Selection", role:.destructive, action: executeDelete)
+            Button("Button 1", role: .destructive){}.buttonStyle(.bordered)
+            Button("Button 2"){}.buttonStyle(.bordered)
+            Button("Button 3", role: .destructive){}.buttonStyle(.borderedProminent)
+            Button("Button 4"){}.buttonStyle(.borderedProminent)
+//          If you want to customize the colors used for a bordered button, use the tint() modifier
+//          Important: Apple explicitly recommends against using too many prominent buttons,
+//          because when everything is prominent nothing is.
+            Button("Button 4"){}.buttonStyle(.borderedProminent).tint(.mint)
+        }
     }
     
     func executeDelete() {
