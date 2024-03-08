@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var scoreTitle=""
     @State private var showingScore=false
     @State private var scoreCount = 0
+    @State private var questionCount = 0
 
     var body: some View {
         ZStack {
@@ -61,28 +62,47 @@ struct ContentView: View {
                     .font(.title.bold())
                 Spacer()
             }.padding()
-        }.alert(scoreTitle, isPresented: $showingScore){
-            Button("Continue", action: askQuestion)
-        }message: {
+        }
+            .alert(scoreTitle, isPresented: $showingScore) {
+                       if questionCount < 8 {
+                           Button("Continue", action: askQuestion)
+                       } else {
+                           Button("Restart", action: restartGame)
+                       }
+                   }
+        message: {
             Text("Your Score is \(scoreCount)")
         }
     }
     
-    func flagTapper(_ number: Int){
-        if(number == correctAnswer){
-          scoreTitle="Correct"
-            scoreCount += 1
-        }else{
-            scoreTitle="Wrong"
-            scoreCount -= 1
+   
+    func flagTapper(_ number: Int) {
+            if number == correctAnswer {
+                scoreTitle = "Correct"
+                scoreCount += 1
+            } else {
+                scoreTitle = "Wrong! That's the flag of \(countries[number])."
+                scoreCount -= 1
+            }
+            showingScore = true
+            questionCount += 1
         }
-        showingScore=true
-    }
     
     func askQuestion(){
-        countries=countries.shuffled()
-        correctAnswer=Int.random(in: 0...2)
+        if questionCount < 8 {
+            countries = countries.shuffled()
+            correctAnswer = Int.random(in: 0...2)
+        } else {
+            showingScore = true
+        }
     }
+    
+    func restartGame() {
+            countries = countries.shuffled()
+            correctAnswer = Int.random(in: 0...2)
+            scoreCount = 0
+            questionCount = 0
+        }
 }
 
 struct AlertsView: View {
