@@ -116,6 +116,20 @@ struct ConditionalModifiers: View {
         .foregroundStyle(useRedText ? .red : .blue)
     }
 }
+
+struct EnvironmentalModifiers: View {
+
+    var body: some View {
+        VStack {
+            Text("Gryffindor")
+                .font(.largeTitle)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
+        }
+        .font(.title)
+    }
+}
 struct AlertsView: View {
     @State private var showingAlert=false;
 
