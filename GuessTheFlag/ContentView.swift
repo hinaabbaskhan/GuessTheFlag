@@ -130,6 +130,20 @@ struct EnvironmentalModifiers: View {
         .font(.title)
     }
 }
+
+struct RegularModifiers: View {
+    var body: some View {
+        VStack {
+            Text("Gryffindor")
+                .blur(radius: 0)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
+        }
+        .blur(radius: 5)
+    }
+}
+
 struct AlertsView: View {
     @State private var showingAlert=false;
 
