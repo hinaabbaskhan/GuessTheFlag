@@ -198,6 +198,27 @@ struct ViewCompositionsContentView: View {
         }
     }
 }
+
+
+//create a custom Title ViewModifier struct
+struct Title:ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .padding()
+            .font(.largeTitle)
+            .background(.blue)
+            .clipShape(Rectangle()).cornerRadius(10)
+    }
+}
+
+extension View{
+    func titleStyle() -> some View {
+        modifier(Title())
+    }
+}
+
+
 struct AlertsView: View {
     @State private var showingAlert=false;
 
