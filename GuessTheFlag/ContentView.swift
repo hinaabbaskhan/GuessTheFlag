@@ -144,6 +144,38 @@ struct RegularModifiers: View {
     }
 }
 
+struct ViewAsproperties: View {
+    let motto1 = Text("Draco dormiens")
+    let motto2 = Text("nunquam titillandus")
+
+    
+    var spellsVstack: some View {
+        VStack {
+            Text("Lumos")
+            Text("Obliviate")
+        }
+    }
+    
+    var spellsGroup: some View {
+        Group {
+            Text("Lumos")
+            Text("Obliviate")
+        }
+    }
+    
+    @ViewBuilder var spellsViewBuilder: some View {
+        Text("Lumos")
+        Text("Obliviate")
+    }
+    
+    
+    var body: some View {
+        VStack {
+            motto1
+            motto2
+        }
+    }
+}
 struct AlertsView: View {
     @State private var showingAlert=false;
 
