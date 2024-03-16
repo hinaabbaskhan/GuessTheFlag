@@ -15,7 +15,7 @@ struct GuessTheFlagApp: App {
 //            ButtonsView()
 //            ImagesView()
 //            AlertsView()
-            CustomContainersContentPreview()
+            GuessTheFlagContentView()
         }
     }
 }

@@ -16,7 +16,7 @@ struct FlagImage:View{
     }
 }
 
-struct AppTitle: ViewModifier{
+struct ProminentTitle: ViewModifier{
     func body(content: Content) -> some View {
         content.foregroundStyle(.white)
             .font(.largeTitle.bold())
@@ -24,10 +24,12 @@ struct AppTitle: ViewModifier{
 }
 
 extension View{
-    func appTitleStyle() -> some View {
-        modifier(AppTitle())
+    func prominentTitleStyle() -> some View {
+        modifier(ProminentTitle())
     }
 }
+
+
 
 struct CountryTitle: ViewModifier{
     func body(content: Content) -> some View {
@@ -93,7 +95,7 @@ struct GuessTheFlagContentView: View {
             VStack(){
                 Spacer()
                 Text("Guess the Flag")
-                    .appTitleStyle()
+                    .prominentTitleStyle()
             VStack(spacing: 15){
                 VStack {
                     Text("Tap the flag of")
