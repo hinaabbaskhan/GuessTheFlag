@@ -219,6 +219,51 @@ extension View{
 }
 
 
+//create a custom WaterMark ViewModifier struct
+struct WaterMark: ViewModifier{
+//  Custom view modifiers can have their own stored properties, whereas extensions to View cannot.
+    var text:String
+    
+    func body(content: Content) -> some View {
+        ZStack{
+            content
+            
+            Text(text)
+                .font(.caption)
+                .foregroundColor(.white)
+                .padding(5)
+                .background(.black)
+        }
+    }
+    
+}
+
+extension View{
+    func watermarked(with text:String)-> some View{
+        modifier(WaterMark(text:text))
+    }
+}
+//Note
+//when it’s better to add a custom view modifier versus just adding a new method to View,
+//It has one main reason: custom view modifiers can have their own stored properties, whereas extensions to View cannot.
+
+
+struct CustomModifiersContentPreview: View {
+    var body: some View {
+        VStack(spacing: 10) {
+            Text("Hello, world!")
+                .modifier(Title())
+        
+            Text("Hello, world!")
+                .titleStyle()
+            
+            
+            Color.blue
+                .frame(width: 300, height: 200)
+                .watermarked(with: "Hacking with Swift")
+        }
+    }
+}
 struct AlertsView: View {
     @State private var showingAlert=false;
 
