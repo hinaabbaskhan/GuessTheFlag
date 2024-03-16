@@ -414,7 +414,7 @@ struct ContentView_Previews: PreviewProvider {
 //        ButtonsView()
 //        ImagesView()
 //        AlertsView()
-        ContentView()
+        CustomContainersContentPreview()
 
     }
 }
